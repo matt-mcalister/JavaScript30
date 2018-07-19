@@ -6,6 +6,18 @@
 </head>
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <br />
+  <p>Some and Every Checks</p>
+  <p>Array.prototype.some() // is at least one person 19 or older?</p>
+  <p>Array.prototype.every() // is everyone 19 or older?</p>
+  <br/>
+  <p>Array.prototype.find()</p>
+  Find is like filter, but instead returns just the one you are looking for</p>
+  find the comment with the ID of 823423</p>
+  <br/>
+  <p>Array.prototype.findIndex()</p>
+  <p>Find the comment with this ID</p>
+  <p>delete the comment with the ID of 823423</p>
   <script>
     // ## Array Cardio Day 2
 
@@ -26,15 +38,19 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+    people.some(person => new Date().getFullYear()-person.year >= 19)
     // Array.prototype.every() // is everyone 19 or older?
+    people.every(person => new Date().getFullYear()-person.year >= 19)
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    comments.find(comment => comment.id === 823423)
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    comments.splice(comments.findIndex(comment => comment.id === 823423),1)
 
   </script>
 </body>

@@ -62,11 +62,33 @@
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100% 0%
     }
 
   </style>
 
   <script>
+  // put stuff here
+  const secondHand = document.getElementsByClassName('second-hand')[0]
+  const minuteHand = document.getElementsByClassName('min-hand')[0]
+  const hourHand = document.getElementsByClassName('hour-hand')[0]
+
+  let counter = 0
+
+  setInterval(tickHands, 1)
+
+  function tickHands(){
+    console.log("number of hours: ", counter/3600)
+    counter++
+    secondHand.style.transform = `rotate(${counter*6 % 360}deg)`
+    minuteHand.style.transform = `rotate(${counter*0.1 % 360}deg)`
+    hourHand.style.transform = `rotate(${counter*0.00167 % 360}deg)`
+  }
+
+  // second hand degrees per second => 6 degrees per second
+  // minute hand degrees per second => 0.1 degrees per second
+  // hour hand degrees per second => 0.0017 degrees per second
+
 
 
   </script>

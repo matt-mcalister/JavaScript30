@@ -59,6 +59,20 @@
 
 <script>
 
+  function playSound(e) {
+    let key = document.querySelector(`div[data-key='${e.which}']`)
+    let audio = document.querySelector(`audio[data-key='${e.which}']`)
+    if(audio){
+      key.classList.add("playing")
+      audio.play()
+      audio.currentTime=0
+      setTimeout(() => {key.classList.remove("playing")}, 100)
+    }
+  }
+
+  window.addEventListener('keydown', playSound);
+
+
 </script>
 
 
